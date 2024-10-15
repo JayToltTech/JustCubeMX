@@ -35,6 +35,7 @@ target_include_directories(stm32cubemx INTERFACE
 )
 
 target_sources(stm32cubemx INTERFACE
+    ../../faults.c
     ../../Core/Src/main.c
     ../../Core/Src/app_entry.c
     ../../Core/Src/app_debug.c
