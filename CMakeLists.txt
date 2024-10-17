@@ -8,9 +8,7 @@ cmake_policy(SET CMP0066 NEW)
 if(NOT CMAKE_TOOLCHAIN_FILE)
   include(${CMAKE_CURRENT_LIST_DIR}/cmake/toolchains/wb5mxx.cmake)
 endif()
-#include("libraries/cubemx_wb5M/cmake/gcc-arm-none-eabi.cmake")
 
-# Enable compile command to ease indexing with e.g. clangd
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 
 project(JustCubeMX
@@ -38,9 +36,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     error_handler.c
 )
 
-#if (NOT TARGET stm32cubemx)
-#  find_package(stm32cubemx REQUIRED PATHS ${CMAKE_CURRENT_LIST_DIR}/libraries/cubemx_wb5m)
-#endif()
-add_subdirectory(libraries/cubemx_wb5M/cmake/stm32cubemx)
-
+if (NOT TARGET stm32cubemx)
+  find_package(stm32cubemx REQUIRED PATHS ${CMAKE_CURRENT_LIST_DIR}/libraries/cubemx_wb5m)
+endif()
 target_link_libraries(${PROJECT_NAME} stm32cubemx)

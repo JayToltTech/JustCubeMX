@@ -2,3 +2,4 @@ build/
 version.h
 cmake/version.h.in.out
 *.jdebug.user
+.DS_Store
