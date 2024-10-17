@@ -1,5 +1,5 @@
-#include "Core/Inc/main.h"
-#include "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
+#include "main.h"
+#include "stm32wbxx_hal.h"
 
 
 void Error_Handler(void)

@@ -1,10 +1,10 @@
 // Copyright Tolt Technologies LLC
 
-#include "Core/Inc/main.h"
-#include "Core/Inc/app_entry.h"
-#include "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
+#include "main.h"
+#include "app_entry.h"
+#include "stm32wbxx_hal.h"
 
-// #include "version.h"
+#include "version.h"
 
 void SystemClock_Config(void);
 void PeriphCommonClock_Config(void);
