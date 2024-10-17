@@ -1,0 +1,6 @@
+device STM32WB55RG
+si swd
+speed 4000
+connect
+loadfile ../build/JustCubeMX.bin, 0x08000000
+exit

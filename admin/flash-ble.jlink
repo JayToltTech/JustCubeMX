@@ -1,0 +1,6 @@
+device STM32WB55RG - FUS
+si swd
+speed 4000
+connect
+loadfile ../ble_stack/stm32wb5x_BLE_Stack_full_fw.bin, 0x080CE000
+exit
