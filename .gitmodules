@@ -1,0 +1,3 @@
+[submodule "libraries/cubemx_wb5m"]
+	path = libraries/cubemx_wb5m
+	url = git@gitlab.com:tolttech/adr/cubemx_wb5m.git
