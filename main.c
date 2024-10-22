@@ -6,17 +6,7 @@
 
 #include "version.h"
 
-void SystemClock_Config(void);
-void PeriphCommonClock_Config(void);
-void MX_GPIO_Init(void);
-void MX_DMA_Init(void);
-void MX_I2C1_Init(void);
-void MX_IPCC_Init(void);
-void MX_LPUART1_UART_Init(void);
-void MX_RTC_Init(void);
-void MX_USB_PCD_Init(void);
-void MX_RF_Init(void);
-
+void main_cubemx(void);
 int _IllegalRead(void);
 
 int main(void) {
@@ -31,19 +21,7 @@ int main(void) {
                 SCB_SHCSR_BUSFAULTENA_Msk |
                 SCB_SHCSR_MEMFAULTENA_Msk);
 
-  HAL_Init();
-  MX_APPE_Config();
-  SystemClock_Config();
-  PeriphCommonClock_Config();
-  MX_IPCC_Init();
-  MX_GPIO_Init();
-  MX_DMA_Init();
-  MX_I2C1_Init();
-  MX_LPUART1_UART_Init();
-  MX_RTC_Init();
-  MX_USB_PCD_Init();
-  MX_RF_Init();
-  MX_APPE_Init();
+  main_cubemx();
 
   int countdown = 3 ;
   while (true) {
