@@ -10,6 +10,7 @@
    return r;
  }
 
+// See: https://developer.arm.com/documentation/dui0774/l/Compiler-Command-line-Options/-fstack-protector---fstack-protector-all---fstack-protector-strong---fno-stack-protector
 void get_input(char *data)
 {
   strcpy(data, "0123456789ABCDEF");
