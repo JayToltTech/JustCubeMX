@@ -1,3 +1,5 @@
+ #include <string.h>
+
  int _IllegalRead(void) {
    int r;
    volatile unsigned int* p;
@@ -7,3 +9,15 @@
  
    return r;
  }
+
+void get_input(char *data)
+{
+  strcpy(data, "0123456789ABCDEF");
+}
+
+int overflow_stack() {
+  char buffer[9];
+  get_input(buffer);
+  return buffer[0];
+}
+

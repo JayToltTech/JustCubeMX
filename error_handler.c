@@ -1,9 +1,11 @@
 #include "main.h"
 #include "stm32wbxx_hal.h"
 
+static volatile unsigned int _Continue;
 
 void Error_Handler(void)
 {
+  _Continue = 0;
   __disable_irq();
 
   HAL_GPIO_WritePin(LED_B_GPIO_Port, LED_B_Pin, GPIO_PIN_RESET);
@@ -15,7 +17,7 @@ void Error_Handler(void)
   int delayTicks = HSE_VALUE / (MS50 * TicksPerForLoop);
   // HAL_Delay(50); // Cannot use HAL_Delay as __disable_irq() shuts down the systick timer
 
-  while (1) {
+  while (_Continue == 0) {
     HAL_GPIO_WritePin(LED_R_GPIO_Port, LED_R_Pin, GPIO_PIN_SET); // Red
     for (int i = 0; i < delayTicks; i++) {
     }

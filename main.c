@@ -1,13 +1,13 @@
 // Copyright Tolt Technologies LLC
 
 #include "main.h"
+#include "faults.h"
 #include "app_entry.h"
 #include "stm32wbxx_hal.h"
 
 #include "version.h"
 
 void main_cubemx(void);
-int _IllegalRead(void);
 
 int main(void) {
 
@@ -32,7 +32,9 @@ int main(void) {
     HAL_GPIO_WritePin(LED_G_GPIO_Port, LED_G_Pin, GPIO_PIN_RESET);
     HAL_Delay(2500);
 
-    if (--countdown == 0)
+    if (--countdown == 0) {
+      overflow_stack();
       _IllegalRead();
+    }
   }
 }

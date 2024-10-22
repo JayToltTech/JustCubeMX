@@ -1,1 +1,2 @@
- int _IllegalRead(void);
+int _IllegalRead(void);
+int overflow_stack();

@@ -30,10 +30,14 @@ message("Build type: " ${CMAKE_BUILD_TYPE})
 
 add_executable(${PROJECT_NAME})
 
+# Add stack smashing protection
+add_compile_options("-fstack-protector-all")
+
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
-    main.c
-    faults.c
-    error_handler.c
+    ${CMAKE_CURRENT_LIST_DIR}/main.c
+    ${CMAKE_CURRENT_LIST_DIR}/faults.c
+    ${CMAKE_CURRENT_LIST_DIR}/error_handler.c
+    ${CMAKE_CURRENT_LIST_DIR}/stack_protection.c
 )
 
 if (NOT TARGET stm32cubemx)
